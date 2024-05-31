@@ -9,7 +9,7 @@ public with sharing class ContactJourneyController {
            // String kContactId = kContacts.Id;
            careerEvents = [SELECT Id, Company__c,First_Name__c,ContactId__c,Last_Name__C, Job_Title__c, Contact_Status__c, New_Company__c, New_Designation__c ,
                            K_Contact__c,K_Contact__r.Contact__c FROM K_Processed_Contact__c 
-                           WHERE ContactId__c=:contactId limit 1];
+                           WHERE ContactId__c=:contactId OR K_Contact__r.Contact__c=:contactId limit 1];
             system.debug('careerEvents--> '+careerEvents);
        
         
